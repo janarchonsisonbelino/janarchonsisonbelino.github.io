@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jan Belino Automation Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: five numbered panels on a dark grid, matching Jan's PDF portfolio.
+   One visual world, so the page stays dark in both viewer themes. */
+:root {
+  --bg: #0c1016;
+  --card: #151b23;
+  --line: #2a323d;
+  --ink: #f1f4f8;
+  --muted: #a3adba;
+  --blue: #7aa7ff;
+  --green: #3fd0a0;
+  --purple: #b59bff;
+  --font: "DM Sans", "Segoe UI", Verdana, system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { font-size: 132.8%; }
+body {
+  margin: 0; color: var(--ink); font-family: var(--font); font-size: 1.125rem; line-height: 1.6;
+  background-color: var(--bg);
+}
+a { color: var(--blue); }
+a:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.wrap { max-width: 1645px; margin: 0 auto; padding: 0 20px; }
+
+.top {
+  display: flex; flex-wrap: wrap; gap: 6px 24px; justify-content: space-between; align-items: center;
+  padding: 22px 0; border-bottom: 1px solid var(--line);
+  font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.top b { font-weight: 700; }
+.top span { color: var(--muted); }
+
+section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+.eyebrow {
+  color: var(--blue); font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 8px;
+  display: flex; justify-content: space-between; gap: 16px;
+}
+.eyebrow span { color: var(--muted); font-weight: 400; font-variant-numeric: tabular-nums; }
+h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); line-height: 1.12; margin: 0 0 10px; text-wrap: balance; }
+.sub { color: var(--muted); margin: 0 0 30px; }
+.note { color: var(--muted); font-size: 0.92rem; margin: 26px 0 0; }
+
+/* Intro */
+body { overflow-x: clip; }
+.hero { text-align: center; padding-top: 64px; position: relative; }
+.hero > * { position: relative; }
+.hero::before {
+  content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: min(1600px, 100vw); height: 470px; pointer-events: none;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 470' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke='%237aa7ff' stroke-width='1.5' opacity='.32'%3E%3Cpath d='M104 108C160 108 160 68 210 68M104 108C160 108 160 158 210 158M274 68C330 68 330 113 380 113M274 158C330 158 330 113 380 113M1214 123C1270 123 1270 73 1320 73M1214 123C1270 123 1270 168 1320 168M1384 73C1440 73 1440 118 1490 118M1384 168C1440 168 1440 118 1490 118'/%3E%3C/g%3E%3Cg fill='%23131c2b' stroke='%237aa7ff' stroke-width='1.5' opacity='.5'%3E%3Crect x='40' y='90' width='64' height='36' rx='9'/%3E%3Crect x='210' y='50' width='64' height='36' rx='9'/%3E%3Crect x='210' y='140' width='64' height='36' rx='9'/%3E%3Crect x='380' y='95' width='64' height='36' rx='9'/%3E%3Crect x='1150' y='105' width='64' height='36' rx='9'/%3E%3Crect x='1320' y='55' width='64' height='36' rx='9'/%3E%3Crect x='1320' y='150' width='64' height='36' rx='9'/%3E%3Crect x='1490' y='100' width='64' height='36' rx='9'/%3E%3C/g%3E%3Cg fill='%233fd0a0' opacity='.55'%3E%3Ccircle cx='58' cy='108' r='4'/%3E%3Ccircle cx='1168' cy='123' r='4'/%3E%3C/g%3E%3C/svg%3E") center / cover no-repeat,
+    linear-gradient(to bottom, #0c1016 0%, #131d30 38%, #0c1016 92%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 26%, #000 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 26%, #000 60%, transparent 100%);
+}
+h1 { font-size: clamp(2.3rem, 7vw, 4rem); line-height: 1.08; margin: 0 0 22px; text-wrap: balance; }
+h1 span { display: block; color: #7d8898; }
+.hero .lede { color: var(--muted); max-width: 60ch; margin: 0 auto 30px; font-size: 1.08rem; }
+.tools { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; list-style: none; padding: 0; margin: 0 0 48px; }
+.tools li { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 4px 14px; font-size: 0.85rem; color: var(--muted); }
+.who { display: grid; grid-template-columns: 345px 1fr; gap: 36px; align-items: center; text-align: left; }
+.who img { width: 100%; height: auto; max-width: 345px; border-radius: 6px; display: block; }
+.who h2 { font-size: 1.7rem; }
+.who p { color: var(--muted); margin: 0 0 14px; max-width: 65ch; }
+.who .tags { color: var(--blue); font-size: 0.85rem; margin: 0; }
+@media (max-width: 640px) { .who { grid-template-columns: 1fr; } }
+
+.tools li { display: inline-flex; align-items: center; gap: 8px; }
+.tools svg { width: 16px; height: 16px; flex: none; fill: none; stroke: var(--blue); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tools li:nth-child(4n+2) svg { stroke: var(--green); }
+.tools li:nth-child(4n+3) svg { stroke: var(--purple); }
+.tools li:nth-child(4n+4) svg { stroke: #f2b25c; }
+
+.cta { margin: 0 0 30px; }
+.btn { display: inline-block; background: var(--blue); color: #0c1016; font-weight: 700; padding: 12px 24px; border-radius: 10px; text-decoration: none; }
+.btn:hover { background: #9bbcff; }
+.who .facts { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 8px; }
+.who .facts li { color: var(--muted); font-size: 0.95rem; padding-left: 16px; border-left: 2px solid var(--blue); }
+.who .facts b { color: var(--ink); font-weight: 500; }
+.pills li.more { background: transparent; border-style: dashed; color: var(--muted); }
+
+/* Hero background, edge to edge: one workflow cluster pinned to each side, sized by screen width */
+.hero::before {
+  width: 100vw;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='20 0 440 150'%3E%3Cpath fill='none' stroke='%237aa7ff' stroke-width='1.5' opacity='.32' d='M104 68C160 68 160 28 210 28M104 68C160 68 160 118 210 118M274 28C330 28 330 73 380 73M274 118C330 118 330 73 380 73'/%3E%3Cg fill='%23131c2b' stroke='%237aa7ff' stroke-width='1.5' opacity='.5'%3E%3Crect x='40' y='50' width='64' height='36' rx='9'/%3E%3Crect x='210' y='10' width='64' height='36' rx='9'/%3E%3Crect x='210' y='100' width='64' height='36' rx='9'/%3E%3Crect x='380' y='55' width='64' height='36' rx='9'/%3E%3C/g%3E%3Ccircle cx='58' cy='68' r='4' fill='%233fd0a0' opacity='.55'/%3E%3C/svg%3E") left 3vw top 80px / clamp(240px, 26vw, 520px) auto no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='20 0 440 150'%3E%3Cg transform='translate(480 0) scale(-1 1)'%3E%3Cpath fill='none' stroke='%237aa7ff' stroke-width='1.5' opacity='.32' d='M104 68C160 68 160 28 210 28M104 68C160 68 160 118 210 118M274 28C330 28 330 73 380 73M274 118C330 118 330 73 380 73'/%3E%3Cg fill='%23131c2b' stroke='%237aa7ff' stroke-width='1.5' opacity='.5'%3E%3Crect x='40' y='50' width='64' height='36' rx='9'/%3E%3Crect x='210' y='10' width='64' height='36' rx='9'/%3E%3Crect x='210' y='100' width='64' height='36' rx='9'/%3E%3Crect x='380' y='55' width='64' height='36' rx='9'/%3E%3C/g%3E%3Ccircle cx='58' cy='68' r='4' fill='%233fd0a0' opacity='.55'/%3E%3C/g%3E%3C/svg%3E") right 3vw top 80px / clamp(240px, 26vw, 520px) auto no-repeat,
+    linear-gradient(to bottom, #0c1016 0%, #131d30 38%, #0c1016 92%);
+}
+@media (max-width: 900px) {
+  .hero::before { background: linear-gradient(to bottom, #0c1016 0%, #131d30 38%, #0c1016 92%); }
+}
+
+/* Cards */
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 20px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+.card .num { font-size: 1.5rem; font-weight: 700; margin: 0 0 18px; font-variant-numeric: tabular-nums; }
+.card h3 { font-size: 1.35rem; font-weight: 500; line-height: 1.3; margin: 0 0 12px; }
+.card p { color: var(--muted); margin: 0 0 12px; font-size: 0.97rem; }
+.card ul { margin: 18px 0 0; padding-left: 18px; font-size: 0.92rem; }
+.c1 .num, .c1 ul { color: var(--blue); }
+.c2 .num, .c2 ul { color: var(--green); }
+.c3 .num, .c3 ul { color: var(--purple); }
+.c4 .num, .c4 ul { color: #f2b25c; }
+
+/* Packages */
+.pkg .price { font-size: 1.9rem; font-weight: 700; line-height: 1.1; margin: 0 0 4px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.pkg .price small { font-size: 0.85rem; font-weight: 400; color: var(--muted); }
+.pkg .for { font-size: 0.9rem; margin: 0 0 6px; }
+.pkg .time { font-size: 0.85rem; border-top: 1px solid var(--line); padding-top: 12px; margin: 18px 0 0; }
+.pkg ul li { margin-bottom: 4px; }
+
+/* Scenario cards */
+.scn .label { color: var(--blue); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 14px; }
+.scn p b { color: var(--ink); font-weight: 500; }
+.scn .result { border-top: 1px solid var(--line); margin: 18px 0 0; padding-top: 14px; font-size: 0.92rem; }
+.scn .result b { color: var(--green); }
+
+/* Screenshot slots */
+.shot { margin: 18px 0 0; }
+.shot .frame {
+  aspect-ratio: 16 / 10; border: 1px dashed #4a5564; border-radius: 10px; background: var(--bg);
+  display: grid; place-items: center; text-align: center; padding: 16px;
+  color: var(--muted); font-size: 0.88rem;
+}
+.shot img { width: 100%; border: 1px solid var(--line); border-radius: 10px; display: block; }
+.shot figcaption { color: var(--muted); font-size: 0.85rem; margin-top: 8px; }
+
+.card.wide { grid-column: 1 / -1; }
+.demo { margin: 22px 0 6px; }
+.demo h4 { font-size: 1.1rem; font-weight: 700; margin: 0 0 4px; color: var(--ink); }
+.demo p { font-size: 0.88rem; margin: 0 0 12px; }
+.demo video { width: 100%; display: block; border: 1px solid var(--line); border-radius: 10px; background: #000; }
+.shot.mid { max-width: 640px; }
+.shot.small { max-width: 460px; margin: 18px 0 0; }
+.shot button, .thumbs button { all: unset; cursor: zoom-in; display: block; width: 100%; }
+.shot button:focus-visible, .thumbs button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 10px; }
+.thumbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 22px 0 0; padding: 0; list-style: none; }
+.thumbs img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: top center; border: 1px solid var(--line); border-radius: 10px; display: block; }
+.thumbs b { display: block; font-size: 0.88rem; font-weight: 500; margin-top: 8px; color: var(--ink); }
+.thumbs span { display: block; font-size: 0.8rem; color: var(--muted); line-height: 1.4; }
+.hint { color: var(--muted); font-size: 0.8rem; margin: 14px 0 0; }
+#viewer { position: fixed; inset: 0; background: rgba(5,8,12,0.92); display: none; overflow: auto; padding: 56px 16px 24px; z-index: 10; cursor: zoom-out; }
+#viewer.open { display: block; }
+#viewer img { display: block; margin: 0 auto; max-width: min(1100px, 100%); border-radius: 8px; }
+#viewer p { color: var(--ink); text-align: center; margin: 0 0 14px; font-size: 0.95rem; }
+#viewer button { position: fixed; top: 12px; right: 16px; background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 8px; padding: 6px 14px; font: inherit; font-size: 0.88rem; cursor: pointer; }
+
+.card.land { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); column-gap: 36px; align-items: start; }
+.card.land > * { grid-column: 1; }
+.card.land > .shot { grid-column: 2; grid-row: 1 / span 6; margin: 0; align-self: center; }
+@media (max-width: 800px) { .card.land { display: block; } .card.land > .shot { margin-top: 18px; } }
+
+/* Project name pills */
+.pills { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 10px 20px; list-style: none; padding: 0; margin: 0; }
+.pills li {
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 14px 16px; text-align: center; font-size: 0.92rem;
+}
+.proj { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 28px; align-items: start; }
+.proj .shot { grid-column: 1; grid-row: 1; margin: 0; max-width: none; }
+.proj .shot img { aspect-ratio: 1 / 1 !important; }
+.proj .pills { grid-column: 2; grid-row: 1; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px 14px; }
+@media (max-width: 700px) { .proj { grid-template-columns: 1fr; } .proj .shot, .proj .pills { grid-column: 1; grid-row: auto; } .proj .shot img { aspect-ratio: 16 / 9 !important; } }
+.pills { grid-auto-rows: 1fr; }
+.pills li { display: flex; align-items: center; justify-content: center; }
+h3.group { font-size: 1.05rem; font-weight: 500; margin: 34px 0 14px; }
+h3.group:first-of-type { margin-top: 0; }
+h3.group small { color: var(--muted); font-size: 0.88rem; font-weight: 400; }
+
+/* Process */
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 26px; }
+.steps li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; }
+.steps .n { color: var(--blue); font-weight: 700; font-size: 1.2rem; }
+.steps b { display: block; font-size: 1.2rem; line-height: 1.3; }
+.steps span { color: var(--muted); font-size: 0.95rem; }
+.expect h3 { font-size: 1.6rem; margin: 0 0 14px; font-weight: 700; }
+.expect dt { font-weight: 700; }
+.expect dd { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
+.expect dl { margin: 0; }
+.contact { margin-top: 30px; }
+.contact p { margin: 0 0 8px; }
+.contact .big { font-size: 1.35rem; margin-bottom: 14px; }
+.contact .muted { color: var(--muted); font-size: 0.92rem; margin-top: 14px; }
+footer { padding: 24px 0 44px; color: var(--muted); font-size: 0.82rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top"><b>Jan Archon Belino</b><span>AI Automation Specialist and Virtual Assistant</span></header>
+
+  <section class="hero">
+    <h1>I Automate the Busywork <span>So You Can Run the Business.</span></h1>
+    <p class="lede">Stop losing hours to slow replies, missed bookings and spreadsheet upkeep. I set up simple systems that answer your customers, remind them, and keep you updated, without you chasing anything.</p>
+    <p class="cta"><a class="btn" href="https://calendly.com/janarchonsb/30min" target="_blank" rel="noopener">Book a free discovery call</a></p>
+    <ul class="tools" aria-label="Tools I use">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>GoHighLevel</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 12h4l4-6h2M11 12l4 6h2"/></svg>n8n</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Zapier</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Gmail</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="1.2"/><circle cx="12" cy="6" r="1.2"/><circle cx="18" cy="6" r="1.2"/><circle cx="6" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="18" cy="12" r="1.2"/><circle cx="6" cy="18" r="1.2"/><circle cx="12" cy="18" r="1.2"/><circle cx="18" cy="18" r="1.2"/></svg>Google Workspace</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-12 7l-5 1 1-4.5A8 8 0 1 1 21 12z"/></svg>WhatsApp</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg>Slack</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>Microsoft 365</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg>Calendly</li>
+    </ul>
+    <div class="who">
+      <img src="photo.jpg" alt="Jan Archon Belino" width="220" height="259">
+      <div>
+        <h2>Who is Jan Archon Belino?</h2>
+        <p class="tags" style="margin: 0 0 16px;">IT Technical Support / AI Automation Specialist / Virtual Assistant</p>
+        <p>I work in IT Technical Support in Riyadh, and I am building on that experience with AI automation. I use GoHighLevel, n8n and Zapier to connect apps, answer leads, organize email, send reminders and track information.</p>
+        <ul class="facts">
+          <li><b>IT Technical Support:</b> hands on work for business clients, on site and remote.</li>
+          <li><b>Client deployments:</b> networking, collaboration systems and Microsoft 365, including email migrations.</li>
+          <li><b>What that means for you:</b> I am used to working inside a client's systems carefully, documenting what I do, and fixing problems under time pressure.</li>
+        </ul>
+        <p>The automation projects in this portfolio are samples I built and tested myself. I have not had an automation client yet, and I say so plainly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">What I can help with</p>
+    <h2>Core Services</h2>
+    <p class="sub">Admin support and AI automation that keep information organized, communication moving, and routine work under control.</p>
+    <div class="grid3">
+      <div class="card c1"><p class="num">01</p><h3>Inbox and Calendar Management</h3>
+        <p>I sort incoming emails, prepare replies for your approval, track what needs an answer, and arrange meetings.</p>
+        <ul><li>Email sorting and reply drafts</li><li>Meeting scheduling and reminders</li></ul></div>
+      <div class="card c2"><p class="num">02</p><h3>Lead Follow Up and Client Onboarding</h3>
+        <p>Every new inquiry gets a reply within a minute, a booking link, and reminders, so fewer customers are lost.</p>
+        <ul><li>Instant replies and booking reminders</li><li>Welcome emails and weekly check ins</li></ul></div>
+      <div class="card c3"><p class="num">03</p><h3>AI Automation</h3>
+        <p>I connect your apps and add AI so repeat work runs by itself: emails are read and sorted, replies are drafted, and you are alerted only when something needs you.</p>
+        <ul><li>AI email sorting, summaries and reply drafts</li><li>Workflows in n8n, Zapier and GoHighLevel</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">How the systems could be used</p>
+    <h2>Example Scenarios</h2>
+    <p class="sub">Four of my personal projects, explained the way a business owner would see them. These are sample builds, not client case studies.</p>
+    <div class="grid2">
+      <div class="card scn wide">
+        <p class="label">Dental clinic / Lead follow up</p>
+        <h3>BrightSmile Dental Clinic</h3>
+        <p><b>Situation:</b> People ask about treatments on the website, but the clinic replies hours later and many never book.</p>
+        <p><b>What the system does:</b> It replies within 1 minute with a booking link, reminds patients before their visit, invites no shows to rebook, and asks for a review afterwards.</p>
+        <p class="result"><b>Result:</b> No inquiry is left unanswered, and the owner gets an alert for every new lead and booking.</p>
+        <figure class="shot"><button type="button" data-full="img/pipeline.jpg" data-cap="Every patient on one board, sorted by how ready they are to book"><img src="img/pipeline.jpg" alt="BrightSmile pipeline board with leads sorted into Cold Lead, Hot Lead and No Show columns"></button><figcaption>Every patient on one board. The system sorts each lead into cold, warm or hot, and moves them as they book, miss or attend a visit.</figcaption></figure>
+        <ul class="thumbs">
+          <li><button type="button" data-full="img/bs1.jpg" data-cap="Instant reply to every new lead"><img src="img/bs1.jpg" alt="Workflow: Lead Instant Response"><b>Instant reply</b><span>Answers every new lead and alerts the owner</span></button></li>
+          <li><button type="button" data-full="img/bs2.jpg" data-cap="Lead scoring: hot, warm and cold"><img src="img/bs2.jpg" alt="Workflow: Lead Qualification and Scoring"><b>Lead scoring</b><span>Sorts leads into hot, warm and cold</span></button></li>
+          <li><button type="button" data-full="img/bs3.jpg" data-cap="Booking confirmation and reminders"><img src="img/bs3.jpg" alt="Workflow: Appointment Confirmation and Reminders"><b>Reminders</b><span>Confirms bookings and reminds patients</span></button></li>
+          <li><button type="button" data-full="img/bs4.jpg" data-cap="No show recovery"><img src="img/bs4.jpg" alt="Workflow: No Show Recovery"><b>No show recovery</b><span>Invites missed patients to rebook</span></button></li>
+          <li><button type="button" data-full="img/bs5.jpg" data-cap="Review request and 90 day checkup invitation"><img src="img/bs5.jpg" alt="Workflow: Post Visit Review and Reactivation"><b>Reviews</b><span>Asks for a review, invites back after 90 days</span></button></li>
+          <li><button type="button" data-full="img/bs6.jpg" data-cap="Private feedback alert to the owner"><img src="img/bs6.jpg" alt="Workflow: Private Feedback Alert"><b>Private feedback</b><span>Sends complaints to the owner only</span></button></li>
+        </ul>
+        <p class="hint">Click any image to see it full size.</p>
+      </div>
+      <div class="card scn wide">
+        <p class="label">Service business / Client onboarding</p>
+        <h3>SwiftDesk Virtual Assistance</h3>
+        <p><b>Situation:</b> A new client signs up, then details get lost in scattered emails and the first week starts late.</p>
+        <p><b>What the system does:</b> A landing page collects the inquiry. Then the system books the discovery call, follows up the proposal, sends a welcome email with one onboarding form, and checks in with the client every week.</p>
+        <p class="result"><b>Result:</b> Every client gets the same organized start, and an unhappy client is noticed early.</p>
+        <div class="demo">
+          <h4>Watch the Sample SwiftDesk Video</h4>
+          <p>16 minutes. I follow two sample leads through the system: one becomes an active client, one goes quiet and is closed as lost.</p>
+          <video controls preload="metadata" poster="img/sdposter.jpg" src="swiftdesk-demo.mp4">Your browser cannot play this video.</video>
+        </div>
+        <figure class="shot mid"><button type="button" data-full="img/sdpage.jpg" data-cap="SwiftDesk landing page with services, steps and the inquiry form"><img src="img/sdhero.jpg" alt="SwiftDesk landing page headline: Get 10 hours of your week back, with a Book a free discovery call button"></button><figcaption>The landing page I built for SwiftDesk. Its inquiry form starts the whole system. Click to see the full page.</figcaption></figure>
+        <ul class="thumbs">
+          <li><button type="button" data-full="img/sd2.jpg" data-cap="Discovery call confirmation and reminders"><img src="img/sd2.jpg" alt="Workflow: Discovery Call Confirmation and Reminders"><b>Call reminders</b><span>Confirms the call and reminds the client</span></button></li>
+          <li><button type="button" data-full="img/sd3.jpg" data-cap="Proposal follow up"><img src="img/sd3.jpg" alt="Workflow: Proposal Follow Up"><b>Proposal follow up</b><span>Follows up until the client answers</span></button></li>
+          <li><button type="button" data-full="img/sd4.jpg" data-cap="Onboarding starts when the client clicks Yes"><img src="img/sd4.jpg" alt="Workflow: Client Onboarding Kickoff"><b>Onboarding start</b><span>One click on Yes sends the welcome form</span></button></li>
+          <li><button type="button" data-full="img/sd5.jpg" data-cap="Onboarding form received: welcome email and task checklist"><img src="img/sd5.jpg" alt="Workflow: Onboarding Received"><b>Task checklist</b><span>Creates the setup tasks automatically</span></button></li>
+          <li><button type="button" data-full="img/sd6.jpg" data-cap="Weekly check in survey"><img src="img/sd6.jpg" alt="Workflow: Weekly Check In"><b>Weekly check in</b><span>Asks the client how the week went</span></button></li>
+          <li><button type="button" data-full="img/sd7.jpg" data-cap="Satisfaction alert: low and high scores"><img src="img/sd7.jpg" alt="Workflow: Satisfaction Alert"><b>Satisfaction alert</b><span>Flags unhappy clients, thanks happy ones</span></button></li>
+        </ul>
+        <p class="hint">Click any image to see it full size.</p>
+      </div>
+      <div class="card scn land">
+        <p class="label">Email / Important messages</p>
+        <h3>AI Email Summary to WhatsApp</h3>
+        <p><b>Situation:</b> Important emails and action items are mixed with routine messages.</p>
+        <p><b>What the system does:</b> It reads each new email, picks out what matters, and sends a short summary to WhatsApp.</p>
+        <p class="result"><b>Example message:</b> Important: Project review meeting. Action: confirm attendance. Deadline: Monday, 5:00 PM.</p>
+        <figure class="shot"><button type="button" data-full="img/n8nmail.jpg" data-cap="AI email sorting: critical, important and routine"><img src="img/n8nmail.jpg" alt="n8n workflow: new Gmail message is read by AI, sorted into critical, important or routine, then sent to WhatsApp"></button><figcaption>The system behind it. AI reads each email, sorts it into critical, important or routine, and sends only the ones that matter to WhatsApp.</figcaption></figure>
+      </div>
+      <div class="card scn land">
+        <p class="label">Scheduling / Meeting requests</p>
+        <h3>WhatsApp Replies and Calendar Confirmation</h3>
+        <p><b>Situation:</b> Someone asks for a meeting by email, and you need to check your calendar before answering.</p>
+        <p><b>What the system does:</b> It checks your calendar, tells you on WhatsApp if the time is free, and prepares the confirmation when you say yes.</p>
+        <p class="result"><b>Example message:</b> Available: Wednesday, 10:00 to 11:00 AM (GMT+3). Reply to confirm the meeting.</p>
+        <figure class="shot"><button type="button" data-full="img/n8ncal.jpg" data-cap="WhatsApp reply: confirm, decline or acknowledge"><img src="img/n8ncal.jpg" alt="n8n workflow: a WhatsApp reply is routed to confirm or decline, the calendar is checked, and the event is created"></button><figcaption>The system behind it. Your WhatsApp reply decides the path: confirm checks the calendar and creates the event, decline marks the meeting declined.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages">
+    <p class="eyebrow">Simple pricing</p>
+    <h2>Packages</h2>
+    <p class="sub">Pick the size that fits your business. Every package starts with a free discovery call, and prices are starting points that depend on your tools and how much needs to be built.</p>
+    <div class="grid3">
+      <div class="card pkg c1"><p class="num">Starter</p>
+        <p class="price"><small>from</small> $150</p>
+        <p class="for">For a business that wants one task automated.</p>
+        <ul><li>One automation, set up and tested</li><li>Example: instant reply to every new inquiry</li><li>Short walkthrough video</li><li>2 weeks of fixes after launch</li></ul>
+        <p class="time">Ready in about 1 week.</p></div>
+      <div class="card pkg c2"><p class="num">Growth</p>
+        <p class="price"><small>from</small> $500</p>
+        <p class="for">For a business that wants a full system.</p>
+        <ul><li>One complete connected system</li><li>Example: lead follow up or client onboarding</li><li>Up to 6 automations working together</li><li>Walkthrough video and 30 days of support</li></ul>
+        <p class="time">Ready in about 2 to 3 weeks.</p></div>
+      <div class="card pkg c3"><p class="num">Ongoing Support</p>
+        <p class="price"><small>from</small> $400 <small>per month</small></p>
+        <p class="for">For a business that wants continuing help.</p>
+        <ul><li>20 hours each month</li><li>Admin support and inbox help</li><li>Changes to your automations, and new ones as needed</li><li>A short written update every week</li></ul>
+        <p class="time">Month to month. No long contract.</p></div>
+    </div>
+    <p class="note">Tool subscriptions such as GoHighLevel, n8n or Zapier are paid by the client and are not included. I work weekday evenings, 8:00 PM to midnight Riyadh time (12:00 PM to 4:00 PM US Eastern), plus weekends.</p>
+    <p class="cta" style="margin: 22px 0 0;"><a class="btn" href="https://calendly.com/janarchonsb/30min" target="_blank" rel="noopener">Book a free discovery call</a></p>
+  </section>
+
+  <section>
+    <p class="eyebrow">Project collection</p>
+    <h2>Sample Projects</h2>
+    <p class="sub">46 sample automations I built and tested across three platforms. The most relevant ones are named here, and each screenshot shows the full list. These are personal projects, not client work.</p>
+
+    <h3 class="group">GoHighLevel <small>· 13 automations in 2 systems</small></h3>
+    <div class="proj">
+    <ul class="pills">
+      <li>BrightSmile: Lead Instant Response</li><li>BrightSmile: Lead Scoring</li><li>BrightSmile: Appointment Reminders</li>
+      <li>BrightSmile: No Show Recovery</li><li>BrightSmile: Review and Reactivation</li><li>BrightSmile: Private Feedback Alert</li>
+      <li>SwiftDesk: Inquiry Instant Response</li><li>SwiftDesk: Discovery Call Reminders</li><li>SwiftDesk: Proposal Follow Up</li>
+      <li>SwiftDesk: Onboarding Kickoff</li><li>SwiftDesk: Onboarding Received</li><li>SwiftDesk: Weekly Check In</li>
+      <li>SwiftDesk: Satisfaction Alert</li>
+    </ul>
+    <figure class="shot small"><button type="button" data-full="img/ghlist.jpg" data-cap="All 13 GoHighLevel workflows published"><img src="img/ghlist.jpg" alt="GoHighLevel workflow list showing all BrightSmile and SwiftDesk workflows with Published status" style="aspect-ratio: 16 / 9; object-fit: cover; object-position: top;"></button><figcaption>All 13 workflows are published and tested. Click to see the full list.</figcaption></figure>
+    </div>
+
+    <h3 class="group">n8n <small>· 19 workflows</small></h3>
+    <div class="proj">
+    <ul class="pills">
+      <li>AI Powered Email Intelligence and Notification System</li><li>WhatsApp Replies and Calendar Confirmation</li><li>Routine Email Daily Digest</li>
+      <li>Duplicate Safe Invoice Intake</li><li>Employee Onboarding</li>
+      
+      <li>M365 License Audit</li>
+      <li>Support Ticket Triage</li>
+      <li>Order Data Cleaner and Daily Report</li><li>Lead Intake and Auto Reply</li>
+      <li>Client Inquiry Handler</li><li class="more">and 9 more in the screenshot</li>
+    </ul>
+    <figure class="shot small"><button type="button" data-full="img/n8nlist.jpg" data-cap="All 19 n8n workflows in my workspace"><img src="img/n8nlist.jpg" alt="n8n workspace listing all 19 workflows" style="aspect-ratio: 16 / 9; object-fit: cover; object-position: top;"></button><figcaption>All 19 workflows in my n8n workspace. Click to see the full list.</figcaption></figure>
+    </div>
+
+    <h3 class="group">Zapier <small>· 14 Zaps</small></h3>
+    <div class="proj">
+    <ul class="pills">
+      <li>AI Email Assistant</li><li>Client Onboarding</li>
+      <li>Daily Executive Slack Notification Summary Report</li><li>Email Logger and Contact Tracker</li>
+      <li>Enterprise AI Email Triage and Automated Discount Processing Pipeline</li><li>Lead Intake with Error Handling</li>
+      <li>Smart Inbox</li>
+      <li>Weekly Client Report</li><li class="more">and 6 more in the screenshot</li>
+    </ul>
+    <figure class="shot small"><button type="button" data-full="img/zaplist.jpg" data-cap="All 14 Zaps in my Zapier account"><img src="img/zaplist.jpg" alt="Zapier folder listing all 14 Zaps" style="aspect-ratio: 16 / 9; object-fit: cover; object-position: top;"></button><figcaption>All 14 Zaps in my Zapier account. Click to see the full list.</figcaption></figure>
+    </div>
+    <p class="note">Learning projects covering lead follow up, email, intake, data handling, notifications and reporting.</p>
+  </section>
+
+  <section>
+    <p class="eyebrow">A clear working process</p>
+    <div class="split">
+      <div>
+        <h2>How We Work Together</h2>
+        <p class="sub">Agree on the scope, set a routine, and keep progress visible.</p>
+        <ol class="steps">
+          <li><span class="n">1</span><div><b>Intro Call and Scope</b><span>We discuss tasks, priorities, working hours and expected results.</span></div></li>
+          <li><span class="n">2</span><div><b>Access and Setup</b><span>I use only the agreed accounts and folders, and write down how each task should be handled.</span></div></li>
+          <li><span class="n">3</span><div><b>Work and Updates</b><span>I complete the agreed tasks and send short progress updates and open questions.</span></div></li>
+          <li><span class="n">4</span><div><b>Review and Adjust</b><span>We review the work, improve the process, and pick repeat tasks worth automating.</span></div></li>
+        </ol>
+      </div>
+      <div>
+        <div class="card expect">
+          <h3>What You Can Expect</h3>
+          <dl>
+            <dt>Clear written updates</dt><dd>A short record of progress and decisions needed.</dd>
+            <dt>Your tools, your rules</dt><dd>An approach that follows your agreed processes.</dd>
+            <dt>Careful handling of information</dt><dd>Access limited to the agreed work, with confidentiality respected.</dd>
+          </dl>
+        </div>
+        <div class="contact" id="contact">
+          <p class="big">Book a free discovery call.</p>
+          <p class="muted" style="margin: 0 0 14px;">Pick a day and time that suits you. The call is 30 minutes, by video, and free.</p>
+          <p class="cta" style="margin: 0 0 20px;"><a class="btn" href="https://calendly.com/janarchonsb/30min" target="_blank" rel="noopener">Choose a time</a></p>
+          <p class="muted" style="margin: 0 0 8px;">Or reach me directly:</p>
+          <p>Email: <a href="mailto:janarchonsb@gmail.com">janarchonsb@gmail.com</a></p>
+          <p>WhatsApp: @janarchon</p>
+          <p class="muted">Available for remote collaboration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>All projects on this page are personal sample builds for fictional businesses.</footer>
+</div>
+<div id="viewer" role="dialog" aria-label="Screenshot viewer"><button type="button" id="viewer-close">Close</button><p id="viewer-cap"></p><img id="viewer-img" alt=""></div>
+<script>
+(function () {
+  var v = document.getElementById('viewer'), img = document.getElementById('viewer-img'), cap = document.getElementById('viewer-cap');
+  function close() { v.classList.remove('open'); img.removeAttribute('src'); }
+  document.querySelectorAll('button[data-full]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      img.src = b.getAttribute('data-full'); img.alt = b.getAttribute('data-cap'); cap.textContent = b.getAttribute('data-cap');
+      v.classList.add('open'); v.scrollTop = 0;
+    });
+  });
+  v.addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+})();
+</script>
+</body>
+</html>
